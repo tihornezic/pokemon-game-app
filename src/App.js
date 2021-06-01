@@ -1,24 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import Home from './components/Home'
+import Battle from './components/Battle'
+import PokemonList from './components/PokemonList'
+import PokemonInfo from './components/PokemonInfo'
+import Rules from './components/Rules'
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import {GlobalProvider} from './context/GlobalState'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <GlobalProvider>
+
+      <Router>
+        <Switch>
+
+          <Route exact path='/'>
+            <Header />
+            <Home />
+          </Route>
+
+          <Route path='/battle'>
+            <Header />
+            <Battle />
+          </Route>
+
+          <Route exact path='/pokemons'>
+            <Header />
+            <PokemonList />
+          </Route>
+
+          <Route exact path='/pokemons/:id'>
+            <Header />
+            <PokemonInfo />
+          </Route>
+
+          <Route exact path='/rules'>
+            <Header />
+            <Rules />
+          </Route>
+
+        </Switch>
+      </Router>
+
+    </GlobalProvider>
   );
 }
 

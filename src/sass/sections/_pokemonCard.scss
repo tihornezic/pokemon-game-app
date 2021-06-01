@@ -1,0 +1,146 @@
+.pokemon-card {
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: scale(1.02);
+        border-radius: 15px;
+        // box-shadow: 0px 14px 23px 1px rgba(0,0,0,0.62);
+        box-shadow: 12px 14px 23px 1px rgba(0, 0, 0, 0.62);
+    }
+
+    .pokemon-outside-outline {
+        border: 3px solid transparent;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 3px 3px 1px rgba(0, 0, 0, 0.2);
+        width: 320px;
+
+        @media (max-width: $lg) {
+            width: 300px;
+        }
+
+        @media (max-width: $md) {
+            width: 280px;
+        }
+
+        @media (max-width: 568px) {
+            width: 260px;
+        }
+
+        @media (max-width: 400px) {
+            width: 230px;
+        }
+
+        .pokemon-inner-outline {
+            border: 2.75px solid $primary-color;
+            background-color: $white;
+            border-radius: 15px;
+            position: relative;
+            text-align: center;
+            width: 270px;
+            height: 330px;
+
+            @media (max-width: $lg) {
+                width: 250px;
+                height: 320px;
+            }
+
+            @media (max-width: $md) {
+                width: 230px;
+                height: 300px;
+            }
+
+            @media (max-width: 568px) {
+                width: 210px;
+                height: 280px;
+            }
+
+            @media (max-width: 400px) {
+                width: 180px;
+                height: 250px;
+            }
+
+            img {
+                // width: 225px;
+                width: 220px;
+                padding: 15px;
+                animation: flipInX;
+                animation-duration: 0.5s;
+                margin-top: 20px;
+                position: relative;
+
+                @media (max-width: $md) {
+                    width: 220px;
+                }
+
+                @media (max-width: 568px) {
+                    width: 200px;
+                }
+
+                @media (max-width: 400px) {
+                    width: 165px;
+                }
+            }
+
+            p {
+                color: $primary-color;
+                font-weight: bolder;
+                font-size: 1.3rem;
+                margin: 20px 0;
+                // text-align: center;
+                // position: relative;
+                position: absolute;
+                top: 280px;
+                left: 0;
+                right: 0;
+                margin: auto;
+
+                @media (max-width: $md) {
+                    top: 260px;
+                    font-size: 1.15rem;
+                }
+
+                @media (max-width: 568px) {
+                    top: 240px;
+                }
+
+                @media (max-width: 400px) {
+                    top: 210px;
+                    font-size: 1rem;
+                }
+            }
+
+            .shadow {
+                position: absolute;
+                width: 60%;
+                height: 5px;
+                top: 355px;
+                left: 55px;
+                box-shadow: 0px 20px 15px rgba(0, 0, 0, 0.4);
+                padding: 0 60px;
+
+                @media (max-width: $md) {
+                    top: 320px;
+                    left: 45px;
+                }
+
+                @media (max-width: 568px) {
+                    top: 300px;
+                    left: 45px;
+                }
+
+                @media (max-width: 400px) {
+                    top: 270px;
+                    left: 30px;
+                }
+            }
+        }
+    }
+
+    /* @media (max-width: 380px) {
+        & > :first-of-type {
+            // margin-top: 30px;
+        }
+    } */
+}

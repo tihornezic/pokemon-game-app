@@ -1,0 +1,63 @@
+.pagination {
+    display: flex;
+    margin: 50px 0;
+    padding-bottom: 60px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    .page-item {
+        list-style: none;
+
+        a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: $primary-color;
+            font-size: 1.2rem;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+        &:first-of-type {
+            margin-left: 10px;
+        }
+
+        &:last-of-type {
+            margin-right: 30px;
+        }
+
+        a:hover {
+            border-bottom: 1px solid $primary-color;
+        }
+
+        .selected {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        @media (max-width: 663px) {
+            display: none;
+        }
+    }
+
+    .navigation-box {
+        color: $primary-color;
+        padding: 5px 10px;
+        border: 2px solid $primary-color;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+
+    .current-page {
+        display: none;
+
+        @media (max-width: 663px) {
+            color: $primary-color;
+            font-weight: 700;
+            font-size: 1.2rem;
+            display: block;
+            width: 50px;
+            margin: 0 20px;
+        }
+    }
+}
