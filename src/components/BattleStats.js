@@ -1,6 +1,7 @@
 import React from 'react'
 import {useContext} from 'react'
 import {GlobalContext} from '../context/GlobalState'
+import {Link} from 'react-router-dom'
 
 const BattleStats = () => {
     const {globalPokemonPairData, pokemonWinner, winnerWon} = useContext(GlobalContext)
@@ -128,7 +129,7 @@ const BattleStats = () => {
                 :
                 <>
                     <div className='continue-battling' style={{marginTop: '10px', marginBottom: '12px', animation: 'fadeInUp', animationDuration: '1s'}}>
-                        <a className='button button-primary' href="/battle">Continue battling </a>
+                        <Link to='/battle' className='button button-primary'>Continue battling </Link>
                     </div>
                     <div className='battle-again' style={{margin: '20px 0', animation: 'fadeInUp', animationDuration: '1s'}}>
                         <a className='button button-primary' href="/battle">Battle Again </a>

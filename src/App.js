@@ -19,10 +19,20 @@ function App() {
             <Home />
           </Route>
 
-          <Route path='/battle'>
+          {/* <Route path='/battle'>
             <Header />
             <Battle />
-          </Route>
+          </Route> */}
+
+          <Route
+            path='/battle'
+            render={(props) =>
+              <>
+                <Header />
+                <Battle key={props.location.key} />
+              </>
+            }
+          />
 
           <Route exact path='/pokemons'>
             <Header />
