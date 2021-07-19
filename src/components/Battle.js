@@ -21,14 +21,13 @@ const Battle = () => {
             .then(data => {
                 if (!data.errors) {
                     const results = data.results
-                    console.log(results)
                     shuffleAndGetPokemonPairs(results)
                 } else {
                     shuffleAndGetPokemonPairs([])
                 }
             })
             .catch(error => console.log(error))
-    }, [])
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
     const shuffleAndGetPokemonPairs = (results) => {
         // shuffle between fetched pokemons
@@ -92,7 +91,7 @@ const Battle = () => {
                 // timeout set to exact duration of the battle animation
             }, 2500)
         }
-    }, [pokemonPairData])
+    }, [pokemonPairData]) // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>
@@ -100,11 +99,11 @@ const Battle = () => {
                 <div className='background'>
                     <div className='battle'>
                         <div className='results'>
-                            {pokemonPairData.map(pokemonPairData => (
-                                <>
+                            {pokemonPairData.map((pokemonPairData, index) => (
+                                <React.Fragment key={index}>
                                     <PokemonCardBattle key={pokemonPairData.id} pokemonPairData={pokemonPairData} />
                                     <span className='vs'>vs</span>
-                                </>
+                                </React.Fragment>
                             ))}
                         </div>
                     </div>

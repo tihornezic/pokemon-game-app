@@ -8,7 +8,7 @@ const PokemonCard = ({pokemonData}) => {
     const [loaded, setLoaded] = useState(false);
 
     return (
-        <div div className='pokemon-card'>
+        <div className='pokemon-card'>
             <div className='pokemon-outside-outline'>
                 <div className='pokemon-inner-outline'>
                     {loaded ? null : (<LoaderSpinnerSmall />)}

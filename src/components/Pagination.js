@@ -10,22 +10,22 @@ const Pagination = ({pokemonsPerPage, totalPokemons, paginate, currentPage}) => 
     return (
         <nav>
             <ul className='pagination'>
-                <div onClick={() => currentPage === 1 ? null : paginate(currentPage - 1)} className='navigation-box'><i class="fas fa-chevron-left"></i></div>
+                <div onClick={() => currentPage === 1 ? null : paginate(currentPage - 1)} className='navigation-box'><i onClick={window.scrollTo({top: 0, behavior: 'smooth'})} class="fas fa-chevron-left"></i></div>
                 {pageNumbers.map(number => (
                     <li key={number} className='page-item'>
                         {number === currentPage ?
-                            <a onClick={() => paginate(number)} href="#" className='page-link selected '>
+                            <p onClick={() => {paginate(number); window.scrollTo({top: 0, behavior: 'smooth'});}} href="#" className='page-link selected '>
                                 {number}
-                            </a>
+                            </p>
                             :
-                            <a onClick={() => paginate(number)} href="#" className='page-link'>
+                            <p onClick={() => {paginate(number); window.scrollTo({top: 0, behavior: 'smooth'});}} href="#" className='page-link'>
                                 {number}
-                            </a>
+                            </p>
                         }
                     </li>
                 ))}
                 <div className='current-page'>{currentPage}</div>
-                <div onClick={() => currentPage === 9 ? null : paginate(currentPage + 1)} className='navigation-box'><i class="fas fa-chevron-right"></i></div>
+                <div onClick={() => currentPage === 9 ? null : paginate(currentPage + 1)} className='navigation-box'><i onClick={window.scrollTo({top: 0, behavior: 'smooth'})} class="fas fa-chevron-right"></i></div>
             </ul>
         </nav>
     )

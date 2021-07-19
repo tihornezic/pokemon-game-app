@@ -21,21 +21,20 @@ const PokemonList = () => {
                 if (!data.errors) {
                     const newPokemonData = {}
                     const results = data.results
-                    console.log(results)
+                    // console.log(results)
                     results.forEach((pokemon, index) => (
                         newPokemonData[index + 1] = {
                             id: index + 1,
                             name: pokemon.name,
                             sprites: {
                                 other: {
-                                    ["official-artwork"]: {
+                                    "official-artwork": {
                                         front_default: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${index + 1}.png`
                                     }
                                 }
                             }
                         }
                     ))
-                    console.log(newPokemonData)
                     setPokemons(newPokemonData)
                 } else {
                     setPokemons([])
@@ -88,12 +87,6 @@ const PokemonList = () => {
                                 getPokemonCards(currentPokemon)
                             )) : (<LoaderSpinnerMain />)
                         }
-
-                        {/* {Object.keys(pokemons).map((id, index) => (
-                            <div>
-                                <a style={{display: 'inline-block'}} href={`/pokemons/${index + 1}`}><PokemonCard pokemonData={pokemons[id]} /></a>
-                            </div>
-                        ))} */}
                     </div>
                     <Pagination pokemonsPerPage={pokemonsPerPage} totalPokemons={pokemonsArray.length} paginate={paginate} currentPage={currentPage} />
                 </div>

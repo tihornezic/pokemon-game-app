@@ -1,6 +1,6 @@
 import React from 'react'
 import {useEffect, useState} from 'react'
-import {useParams, useHistory, useLocation, Link} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import PokemonCard from './PokemonCard'
 
 const PokemonInfo = () => {

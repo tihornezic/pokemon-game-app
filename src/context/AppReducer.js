@@ -1,4 +1,4 @@
-export default (state, action) => {
+function AppReducer (state, action)  {
 
     switch (action.type) {
         case 'SET_GLOBAL_PAIRS_STATS_AND_WINNER':
@@ -91,13 +91,12 @@ export default (state, action) => {
 
             // if first pokemon wins
             if (scoreWinPointsFirstPokemon > scoreWinPointsSecondPokemon) {
-                console.log(`${scoreWinPointsFirstPokemon} > ${scoreWinPointsSecondPokemon} First Pokemon wins!`)
-                console.log(action.payload[0])
+                // console.log(`${scoreWinPointsFirstPokemon} > ${scoreWinPointsSecondPokemon} First Pokemon wins!`)
+                // console.log(action.payload[0])
 
                 // if the pokemonWinner has won again
                 if (state.pokemonWinner === action.payload[0]) {
-                    console.log('winner won')
-                    
+
                     return {
                         ...state,
                         // setting the pokemonPairData available globally inside the globalPokemonPairData variable
@@ -115,14 +114,13 @@ export default (state, action) => {
                     }
                 }
 
-            // if second pokemon wins
+                // if second pokemon wins
             } else {
-                console.log(`${scoreWinPointsSecondPokemon} > ${scoreWinPointsFirstPokemon} Second Pokemon wins!`)
-                console.log(action.payload[1])
+                // console.log(`${scoreWinPointsSecondPokemon} > ${scoreWinPointsFirstPokemon} Second Pokemon wins!`)
+                // console.log(action.payload[1])
 
                 // if the pokemonWinner has won again
                 if (state.pokemonWinner === action.payload[1]) {
-                    console.log('winner won')
 
                     return {
                         ...state,
@@ -139,5 +137,9 @@ export default (state, action) => {
                     }
                 }
             }
+        default:
+            return
     }
 }
+
+export default AppReducer

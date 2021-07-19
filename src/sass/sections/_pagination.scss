@@ -9,13 +9,14 @@
     .page-item {
         list-style: none;
 
-        a {
+        p {
             margin-left: 20px;
             text-decoration: none;
             color: $primary-color;
             font-size: 1.2rem;
             font-weight: 400;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         &:first-of-type {

@@ -1,15 +1,15 @@
 import React from 'react'
 import {useContext} from 'react'
 import {GlobalContext} from '../context/GlobalState'
-import {Link} from 'react-router-dom'
 
 const BattleStats = () => {
     const {globalPokemonPairData, pokemonWinner, winnerWon} = useContext(GlobalContext)
     const [firstPokemonStats, secondPokemonStats] = globalPokemonPairData
 
-    if (firstPokemonStats.hp > secondPokemonStats.hp) {
-        console.log('first hp wins')
-    }
+    // if (firstPokemonStats.hp > secondPokemonStats.hp) {
+    //     console.log('first hp wins')
+    // }
+
 
     return (
         <>
