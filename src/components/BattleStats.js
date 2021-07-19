@@ -123,7 +123,7 @@ const BattleStats = () => {
             {winnerWon ?
                 <>
                     <div style={{marginTop: '25px', marginBottom: '30px', animation: 'fadeInUp', animationDuration: '1s'}}>
-                        <a onClick={() => localStorage.clear()} className='button button-secondary' href="/">End Game</a>
+                        <a onClick={() => localStorage.clear()} className='button button-secondary' href='/'>End Game</a>
                     </div>
                 </>
                 :
@@ -132,10 +132,10 @@ const BattleStats = () => {
                         <Link to='/battle' className='button button-primary'>Continue battling </Link>
                     </div>
                     <div className='battle-again' style={{margin: '20px 0', animation: 'fadeInUp', animationDuration: '1s'}}>
-                        <a className='button button-primary' href="/battle">Battle Again </a>
+                        <Link to='/battle' className='button button-primary'>Battle Again </Link>
                     </div>
                     <div style={{marginBottom: '25px', animation: 'fadeInUp', animationDuration: '1s'}}>
-                        <a onClick={() => localStorage.clear()} className='button button-secondary' href="/">End Game</a>
+                        <a onClick={() => localStorage.clear()} className='button button-secondary' href='/'>End Game</a>
                     </div>
                 </>
             }
